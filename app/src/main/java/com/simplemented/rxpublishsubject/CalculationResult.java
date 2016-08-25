@@ -1,4 +1,4 @@
-package com.simplemented.rxpublishsubject.shared;
+package com.simplemented.rxpublishsubject;
 
 public class CalculationResult {
 

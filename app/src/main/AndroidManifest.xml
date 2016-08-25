@@ -13,7 +13,7 @@
         >
 
         <activity
-            android:name=".problem.MainActivity"
+            android:name=".MainActivity"
             android:windowSoftInputMode="stateVisible|adjustResize"
             >
 

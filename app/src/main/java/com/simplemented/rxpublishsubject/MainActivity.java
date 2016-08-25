@@ -1,4 +1,4 @@
-package com.simplemented.rxpublishsubject.problem;
+package com.simplemented.rxpublishsubject;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.jakewharton.rxbinding.view.RxView;
 import com.jakewharton.rxbinding.widget.RxTextView;
-import com.simplemented.rxpublishsubject.R;
-import com.simplemented.rxpublishsubject.shared.CalculationResult;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

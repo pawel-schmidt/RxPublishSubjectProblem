@@ -1,4 +1,4 @@
-package com.simplemented.rxpublishsubject.shared;
+package com.simplemented.rxpublishsubject;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
