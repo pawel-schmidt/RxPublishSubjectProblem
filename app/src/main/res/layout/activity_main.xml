@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.simplemented.rxpublishsubject.MainActivity"
+    tools:context=".problem.MainActivity"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:id="@+id/activity_main_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="-8dp"
+        android:layout_marginTop="-8dp"
+        android:indeterminate="true"
+        android:visibility="gone"
         />
-</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
+
+        <EditText
+            android:id="@+id/activity_main_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true"
+            android:text="@string/activity_main_initial_value"
+            />
+
+        <TextView
+            android:id="@+id/activity_main_text_view"
+            style="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/activity_main_result_fmt"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

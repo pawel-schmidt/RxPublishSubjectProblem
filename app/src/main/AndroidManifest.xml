@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.simplemented.rxpublishsubject"
-          xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    package="com.simplemented.rxpublishsubject"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
     <application
@@ -10,13 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".problem.MainActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            >
+
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>
