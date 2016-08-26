@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 import rx.Observable;
 import rx.Observer;
 import rx.Scheduler;
-import rx.functions.Func1;
 import rx.subjects.PublishSubject;
 
 public class MainActivityPresenter {
@@ -30,12 +29,7 @@ public class MainActivityPresenter {
         this.uiScheduler = uiScheduler;
 
         doublesObservable = textChangesSubject
-                .map(new Func1<CharSequence, Double>() {
-                    @Override
-                    public Double call(final CharSequence charSequence) {
-                        return tryParse(charSequence);
-                    }
-                })
+                .map(this::tryParse)
                 .filter(RxUtils.isNotNull())
                 .share();
     }
@@ -49,12 +43,7 @@ public class MainActivityPresenter {
     public Observable<CalculationResult> calculationResultObservable() {
         return doublesObservable
                 .debounce(1500L, TimeUnit.MILLISECONDS)
-                .map(new Func1<Double, CalculationResult>() {
-                    @Override
-                    public CalculationResult call(final Double d) {
-                        return new CalculationResult(d, d * d, d * d * d);
-                    }
-                })
+                .map(d -> new CalculationResult(d, d * d, d * d * d))
                 .subscribeOn(computationScheduler)
                 .observeOn(uiScheduler);
     }

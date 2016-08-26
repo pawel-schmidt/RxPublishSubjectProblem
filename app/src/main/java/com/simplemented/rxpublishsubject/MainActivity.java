@@ -11,7 +11,6 @@ import com.jakewharton.rxbinding.view.RxView;
 import com.jakewharton.rxbinding.widget.RxTextView;
 
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 import rx.subscriptions.SerialSubscription;
@@ -39,12 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 presenter.progressBarVisibilityObservable()
                         .subscribe(RxView.visibility(progressBar)),
                 presenter.calculationResultObservable()
-                        .subscribe(new Action1<CalculationResult>() {
-                            @Override
-                            public void call(final CalculationResult result) {
-                                textView.setText(getString(R.string.activity_main_result_fmt,
-                                        result.value(), result.square(), result.cube()));
-                            }
+                        .subscribe(result -> {
+                            textView.setText(getString(R.string.activity_main_result_fmt,
+                                    result.value(), result.square(), result.cube()));
                         })
         ));
 
